@@ -1,0 +1,174 @@
+﻿@model IEnumerable<Infraestrcture.Entity.Entity.UsuarioEntity>
+
+@{
+
+}
+
+<style>
+    .btnLogin {
+        float: right;
+        margin-bottom: 10px;
+    }
+
+</style>
+
+<h1>Lista de Usuarios</h1>
+<button class="btnLogin btn btn-success"
+        data-toggle="modal" data-target="#modalLogin">
+    Iniciar Session
+</button>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Last</th>
+            <th scope="col">User Name</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.LastName</td>
+                <td>@item.UserName</td>
+            </tr>
+        }
+</table>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Iniciar Sessión</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <form>
+                    <div class="row col-md-10 offset-1">
+                        <div class="col-md-12 form-group">
+                            <label>Usuario</label>
+                            <input type="text" id="txtUser" placeholder="Usuario" class="form-control" />
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <label>Contraseña</label>
+                            <input type="text" id="txtPassword" placeholder="Contraseña" class="form-control" />
+                        </div>
+
+                        <div class="container my-3 bg-light">
+                            <div class="col-md-12 text-center">
+                                <button type="button" class="btn btn-primary" onclick="loginPost()">Acceder</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            @* <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Canecelar</button>
+                <button type="button" class="btn btn-primary">Iniciar Session</button>
+                </div>*@
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+<script>
+
+    function login()
+    {
+        let user=$("#txtUser").val();
+        if(user=="")
+        {
+            $("#txtUser").focus();
+            alert("Usuario Obligatorio");
+            return;
+        }
+
+        let pass=$("#txtPassword").val();
+        if(pass=="")
+        {
+            $("#txtPassword").focus();
+            alert("Contraseña Obligatorio");
+            return;
+        }
+
+         $.ajax({
+                url: '@Url.Action("Login", "Usuario")',
+                method: 'GET',
+                dataType: "json",
+                data:{
+                    username:user,
+                    password:pass
+                },
+                success: function (data) {
+                    //$("#modalSpinner").hide();
+
+                    console.log(data);
+
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    //$("#modalSpinner").hide();
+                    console.error(xhr, textStatus, errorThrown);
+                }
+            });
+
+    }
+
+
+     function loginPost()
+    {
+        let user=$("#txtUser").val();
+        if(user=="")
+        {
+            $("#txtUser").focus();
+            alert("Usuario Obligatorio");
+            return;
+        }
+
+        let pass=$("#txtPassword").val();
+        if(pass=="")
+        {
+            $("#txtPassword").focus();
+            alert("Contraseña Obligatorio");
+            return;
+        }
+
+        let parametros={
+            UserName:user,
+            Password:pass
+        };
+
+        console.log(parametros);
+         $.ajax({
+                url: '@Url.Action("Login", "Usuario")',
+                method: 'POST',
+                dataType: "json",
+                data:parametros,
+                success: function (data) {
+                    //$("#modalSpinner").hide();
+
+                    console.log(data);
+
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    //$("#modalSpinner").hide();
+                    console.error(xhr, textStatus, errorThrown);
+                }
+            });
+
+    }
+
+
+</script>
+
+}
