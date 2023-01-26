@@ -8,7 +8,7 @@ namespace Ejercicios.Net.InformeGas.Logica
 {
     public class Informe
     {
-
+        //URL del enunciado: http://progra.usm.cl/apunte/ejercicios/3/gas.html
 
         public void PrepararData()
         {

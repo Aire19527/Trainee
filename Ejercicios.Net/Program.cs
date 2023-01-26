@@ -18,85 +18,16 @@ namespace Ejercicios.Net
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("**********");
-            //Console.WriteLine("Por favor escriba su nombre:");
-            //string nombre=Console.ReadLine();
-            //Console.WriteLine("Hola, "+ nombre);
-            //Console.WriteLine($"Hola, {nombre}");
-
-            //Promedio();
-            //PromedioV2();
-
-            //Edad();
-            //NumeroMayor();
-
-            //PromedioMain objPromedio = new PromedioMain();
-            //objPromedio.Main();
 
 
-            //Alza objAlza = new Alza();
-            //objAlza.CalcularAlza();
+            //Agrupacion objAgrupacion=new Agrupacion();
+            //objAgrupacion.Consultar();
 
-            //BarmanLogica objBarman = new BarmanLogica();
-            //objBarman.CalcularPrecios();
+            //BarmanLogica barman = new BarmanLogica();
+            //barman.CalcularPrecios();
 
-            //Informe objInforme=new  Informe();
-            //objInforme.PrepararData();
-
-
-            //Mayor objMayor = new Mayor();
-            //objMayor.MayorQue();
-
-            //string[] juegos = { "Carcassonne", "Bang", "Jungle Speed", "Los colonos de Catán", "Black stories", "Munchkin", "Zombies" };
-
-            //IEnumerable<string> consulta = from j in juegos
-            //                               where j.StartsWith("J")
-            //                               orderby j ascending
-            //                               select j;
-
-            //IEnumerable<string> consulta_2 = juegos.Where(x => x.StartsWith("J")).OrderByDescending(x => x.ToString());
-
-            //foreach (string elemento in consulta)
-            //    Console.WriteLine(elemento);
-
-            //foreach (string elemento in consulta_2)
-            //    Console.WriteLine(elemento);
-
-            //List<Juego> juegos = new List<Juego>()
-            //{
-            //    new Juego { Id=1, Nombre="Carcassonne", MinJugadores=2, MaxJugadores=8 },
-            //    new Juego { Id=2, Nombre="Los colonos de Catán", MinJugadores=2, MaxJugadores=8 },
-            //    new Juego { Id=3, Nombre="Jungle Speed", MinJugadores=1, MaxJugadores=4 },
-            //    new Juego { Id=4, Nombre="Black Stories", MinJugadores=2, MaxJugadores=100 },
-            //    new Juego { Id=5, Nombre="Munchkin", MinJugadores=3, MaxJugadores=10 }
-            //};
-
-            //List<Juego> consul = juegos.Where(x => x.MaxJugadores > 4).OrderBy(x => x.Nombre).ToList();
-
-            //IEnumerable<Juego> consulta = from j in juegos
-            //                              where j.MaxJugadores > 4
-            //                              orderby j.Nombre ascending
-            //                              select j;
-            //foreach (var item in consul)
-            //{
-            //    Console.WriteLine(item.Nombre);
-            //    Console.WriteLine(item.MaxJugadores);
-            //    Console.WriteLine("");
-
-            //}
-
-            //foreach (var item in consulta)
-            //{
-            //    Console.WriteLine(item.Nombre);
-            //    Console.WriteLine(item.MaxJugadores);
-            //    Console.WriteLine("");
-
-            //}
-
-
-
-            Agrupacion objAgrupacion=new Agrupacion();
-            objAgrupacion.Consultar();
+            Mayor mayor = new Mayor();
+            mayor.MayorQue();
         }
 
 

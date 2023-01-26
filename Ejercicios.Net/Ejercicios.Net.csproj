@@ -5,4 +5,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Barman\Img\" />
+    <Folder Include="InformeGas\Img\" />
+    <Folder Include="MayorQue\Img\" />
+  </ItemGroup>
+
 </Project>

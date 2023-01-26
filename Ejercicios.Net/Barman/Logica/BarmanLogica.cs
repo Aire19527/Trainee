@@ -6,21 +6,27 @@ using System.Text;
 
 namespace Ejercicios.Net.Barman.Logica
 {
+    //URL Enunciado Ejercicio: http://progra.usm.cl/apunte/ejercicios/3/barman.html
+
     public class BarmanLogica
     {
         //private List<BaldesModels> listaBaldes = new List<BaldesModels>();
+        #region Attributes
         private List<BaldesModels> listaBaldes;
         int precioVino = 5;
         int precioGinebra = 45;
-        int precioJugoLimon = 10;
+        int precioJugoLimon = 10; 
+        #endregion
 
 
+        #region Builder
         public BarmanLogica()
         {
             PrepararBebidas();
         }
+        #endregion
 
-
+        #region Methods
         private void PrepararBebidas()
         {
             listaBaldes = new List<BaldesModels>();
@@ -81,12 +87,6 @@ namespace Ejercicios.Net.Barman.Logica
 
         }
 
-
-        private int RetornarEntero(int uno, int dos)
-        {
-            int c = uno * dos;
-
-            return c;
-        }
+        #endregion
     }
 }
