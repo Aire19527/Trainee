@@ -13,9 +13,11 @@ namespace Ejercicios.Net.Barman.Logica
         //private List<BaldesModels> listaBaldes = new List<BaldesModels>();
         #region Attributes
         private List<BaldesModels> listaBaldes;
-        int precioVino = 5;
-        int precioGinebra = 45;
-        int precioJugoLimon = 10; 
+        private List<PreciosModels> listaPrecios;
+
+        //int precioVino = 5;
+        //int precioGinebra = 45;
+        //int precioJugoLimon = 10;
         #endregion
 
 
@@ -54,10 +56,34 @@ namespace Ejercicios.Net.Barman.Logica
                 Ginebra = 30,
                 JugoLimon = 32
             });
+
+            listaPrecios = new List<PreciosModels>()
+            {
+                new PreciosModels()
+                {
+                    Liquido="Vino",
+                    Precio=5
+                },
+                new PreciosModels()
+                {
+                    Liquido="Ginebra",
+                    Precio=45
+                },
+                new PreciosModels()
+                {
+                    Liquido="JugoLimon",
+                    Precio=10
+                }
+            };
         }
 
         public void CalcularPrecios()
         {
+            int precioVino = listaPrecios.FirstOrDefault(x => x.Liquido.ToLower() == "vino").Precio;
+            int precioGinebra = listaPrecios.FirstOrDefault(x => x.Liquido.ToLower() == "ginebra").Precio;
+            int precioJugoLimon = listaPrecios.FirstOrDefault(x => x.Liquido.ToLower() == "jugolimon").Precio;
+
+
             //BaldesModels baldesA= listaBaldes.First(x=>x.Balde=="A");
             BaldesModels baldesA = listaBaldes.FirstOrDefault(x => x.Balde == "A");
             int precioBaldeA = 0;

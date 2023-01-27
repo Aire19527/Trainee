@@ -7,7 +7,6 @@ using System.Text;
 namespace Ejercicios.Net.MayorQue.Logica
 {
     //URL Enunciado Ejercicio: http://progra.usm.cl/apunte/ejercicios/2/mayores-que.html
-
     public class Mayor
     {
         List<int> valores = new List<int>();
@@ -38,18 +37,21 @@ namespace Ejercicios.Net.MayorQue.Logica
         {
             Console.WriteLine("Digita un numero");
             int number = Convert.ToInt32(Console.ReadLine());
+
+            //Forma #1
             int count = 0;
+
             foreach (var item in valores)
             {
-                if (number > item)
+                if (item > number)
                     count++;
             }
 
             Console.WriteLine("Numeros Mayores: " + count);
 
 
-            //Forma 2
-            int count_2 = valores.Where(x => x < number).Count();
+            //Forma #2
+            int count_2 = valores.Where(x => x > number).Count();
             Console.WriteLine("Segunda Forma Numeros Mayores: " + count);
 
         }

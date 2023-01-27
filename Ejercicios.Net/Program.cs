@@ -1,10 +1,7 @@
-﻿using Ejercicios.Net.AgruparEstudiantes.Logica;
-using Ejercicios.Net.AlzaDolar.Logica;
+﻿using Ejercicios.Net.AlzaDolar.Logica;
 using Ejercicios.Net.Barman.Logica;
 using Ejercicios.Net.InformeGas.Logica;
 using Ejercicios.Net.MayorQue.Logica;
-using Ejercicios.Net.Modelos;
-using Ejercicios.Net.PromedioGrupos.Logica;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,8 +23,14 @@ namespace Ejercicios.Net
             //BarmanLogica barman = new BarmanLogica();
             //barman.CalcularPrecios();
 
-            Mayor mayor = new Mayor();
-            mayor.MayorQue();
+            //Mayor mayor = new Mayor();
+            //mayor.MayorQue();
+
+            //Alza  alza= new Alza();
+            //alza.CalcularAlza();
+
+            Informe informe = new Informe();
+            informe.PrepararData();
         }
 
 

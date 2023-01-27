@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="AlzaDolar\Img\" />
     <Folder Include="Barman\Img\" />
     <Folder Include="InformeGas\Img\" />
     <Folder Include="MayorQue\Img\" />

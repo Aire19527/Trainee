@@ -7,7 +7,7 @@ namespace Ejercicios.Net.AlzaDolar.Logica
 {
     public class Alza
     {
-
+        //URL Enunciado Ejercicio: http://progra.usm.cl/apunte/ejercicios/1/alzas-dolar.html
         public void CalcularAlza()
         {
             int dia = 0;
@@ -49,15 +49,6 @@ namespace Ejercicios.Net.AlzaDolar.Logica
                     Console.WriteLine($"El alza mayor fue de:  {resultado * -1}");
 
             }
-
-
-            //foreach (var item in precios)
-            //{
-
-            //}
-
-
-
         }
 
 
